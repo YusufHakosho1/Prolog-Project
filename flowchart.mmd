@@ -1,0 +1,39 @@
+flowchart TD
+    A[Start] --> B[Display Menu]
+    B --> C{User Choice}
+
+    C -->|1| D1[List Fathers]
+    C -->|2| D2[List Mothers]
+    C -->|3| D3[List Grandparents]
+    C -->|4| D4[List Siblings]
+    C -->|5| D5[List Ancestors]
+    C -->|6| D6[List People]
+    C -->|7| D7[Check Relationship]
+    C -->|8| D8[Print Family Tree]
+    C -->|9| D9[Exit]
+    C -->|other| D0[Invalid Option]
+
+    D1 --> B
+    D2 --> B
+    D3 --> B
+    D4 --> B
+    D5 --> B
+    D6 --> B
+
+    D7 --> E1[Prompt for Relationship Name]
+    E1 --> E2[Prompt for Person 1]
+    E2 --> E3[Prompt for Person 2]
+    E3 --> E4[Call Relation P1, P2]
+    E4 -->|true| E5[Display Yes]
+    E4 -->|false| E6[Display No]
+    E5 --> B
+    E6 --> B
+
+    D8 --> F1[Prompt for Person Name]
+    F1 --> F2{Person Found?}
+    F2 -->|yes| F3[Print Tree Recursively]
+    F2 -->|no| F4[Display Not Found]
+    F3 --> B
+    F4 --> B
+
+    D9 --> G[Goodbye!]
